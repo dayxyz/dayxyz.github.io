@@ -1,0 +1,25 @@
+scheme: Mist
+language: zh-Hans
+footer:
+  since: 2019
+
+  copyright: Silver
+
+  # Powered by Hexo & NexT
+  powered: true
+menu:
+  home: / || fa fa-home
+  tags: /tags/ || fa fa-tags
+  archives: /archives/ || fa fa-archive
+
+highlight_theme: night
+
+
+post_wordcount: 		# 字数统计
+  item_text: true		# 是否显示文字
+  wordcount: true		# 显示字数
+  min2read: true		# 显示阅读时间
+  totalcount: true		# 显示总数
+  separated_meta: true	# 是否分开
+
+

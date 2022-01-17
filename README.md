@@ -1,1 +1,1 @@
-# dayxyz-dayxyz.github.io
+# hexo
