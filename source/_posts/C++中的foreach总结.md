@@ -9,7 +9,7 @@ tags: [STL,boost]
 * C++11之后的**Range-based for loop**
 * STL中的**std::for_each**
 * Boost中的**BOOST_FOREACH**
-<!-- more -->
+
 #### for
 C++11增加了range-for用法，简化了遍历写法
 ```C
