@@ -2,7 +2,7 @@ title: Nginx配置https双向认证
 date: 2020-11-02 08:13:00
 categories: 技术
 tags: [nginx,ssl]
-<!--more-->
+
 ---
 ### 生成 CA 私钥和证书
 1. 生成一个 CA 私钥: 
@@ -13,7 +13,7 @@ tags: [nginx,ssl]
     ```c
     openssl req -new -x509 -days 3650 -key ca.key -out ca.crt
     ```
-
+<!--more-->
 ### CA签发服务端证书
 1. 生成服务端的私钥: server.key
     ```c
