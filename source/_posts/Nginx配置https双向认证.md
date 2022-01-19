@@ -12,7 +12,7 @@ tags: [nginx,ssl]
     ```c
     openssl req -new -x509 -days 3650 -key ca.key -out ca.crt
     ```
-<!-- more -->
+
 ### CA签发服务端证书
 1. 生成服务端的私钥: server.key
     ```c
