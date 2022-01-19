@@ -181,7 +181,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 13:14:23" itemprop="dateModified" datetime="2022-01-19T13:14:23+08:00">2022-01-19</time>
+                <time title="修改时间：2022-01-19 13:19:01" itemprop="dateModified" datetime="2022-01-19T13:19:01+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,7 +264,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 13:14:23" itemprop="dateModified" datetime="2022-01-19T13:14:23+08:00">2022-01-19</time>
+                <time title="修改时间：2022-01-19 13:19:01" itemprop="dateModified" datetime="2022-01-19T13:19:01+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -340,7 +340,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 13:14:23" itemprop="dateModified" datetime="2022-01-19T13:14:23+08:00">2022-01-19</time>
+                <time title="修改时间：2022-01-19 13:19:01" itemprop="dateModified" datetime="2022-01-19T13:19:01+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -422,7 +422,7 @@ chmod a<span class="token operator">+</span>x certbot<span class="token operator
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 13:14:23" itemprop="dateModified" datetime="2022-01-19T13:14:23+08:00">2022-01-19</time>
+                <time title="修改时间：2022-01-19 13:19:01" itemprop="dateModified" datetime="2022-01-19T13:19:01+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -450,14 +450,86 @@ chmod a<span class="token operator">+</span>x certbot<span class="token operator
 <li>限制作用域在<strong>本文件</strong></li>
 <li>若没有初始化，则被默认初始化为<strong>0</strong></li>
 </ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/23/C++%E4%B8%ADstatic%E7%9A%84%E7%94%A8%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+<h3 id="静态全局变量"><a href="#静态全局变量" class="headerlink" title="静态全局变量"></a>静态全局变量</h3><ul>
+<li>在全局变量前加上 static 关键字，即为静态全局变量</li>
+<li>静态全局变量<strong>仅在该文件内可见</strong>，从变量定义处开始直到文件结束， 而在其他文件中<strong>不可见</strong></li>
+</ul>
+<h3 id="静态局部变量"><a href="#静态局部变量" class="headerlink" title="静态局部变量"></a>静态局部变量</h3><ul>
+<li>在局部变量前加上 static 关键字，即为静态局部变量</li>
+<li>静态局部变量<strong>只在首次执行到声明处初始化一次</strong>，之后再执行该语句时<strong>不再初始化</strong></li>
+<li>作用域与局部变量的作用域一样</li>
+</ul>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">void</span> <span class="token function">Func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">static</span> <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token comment">// |x| is initialized only once across five calls of |Func| and the variable</span>
+  <span class="token comment">// will get incremented five times after these calls. The final value of |x|</span>
+  <span class="token comment">// will be 5.</span>
+  x<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// outputs the value of |x|</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">Func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// prints 1</span>
+  <span class="token function">Func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// prints 2</span>
+  <span class="token function">Func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// prints 3</span>
+  <span class="token function">Func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// prints 4</span>
+  <span class="token function">Func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// prints 5</span>
+
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>  输出<br>  <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token number">1</span>
+<span class="token number">2</span>
+<span class="token number">3</span>
+<span class="token number">4</span>
+<span class="token number">5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<h3 id="静态函数"><a href="#静态函数" class="headerlink" title="静态函数"></a>静态函数</h3><ul>
+<li>在普通函数的返回类型前加上 static 关键字，即为静态函数</li>
+<li>只能在<strong>本文件</strong>中使用</li>
+</ul>
+<h3 id="静态数据成员"><a href="#静态数据成员" class="headerlink" title="静态数据成员"></a>静态数据成员</h3><ul>
+<li>在类内数据成员前加上 static 关键字，即为静态数据成员</li>
+<li>静态数据成员，无论有多少个该类的对象，该静态数据成员在<strong>内存中只有一份拷贝</strong>，该静态数据成员由所有该类对象共享</li>
+<li>静态数据成员不能在类中定义和初始化，只能在类中声明，在<strong>类外进行定义和初始化</strong></li>
+<li>静态数据成员的初始化为**&lt;类型名&gt; &lt;类名&gt;::&lt;变量名&gt; = &lt;值&gt;**</li>
+<li>静态数据成员遵从 public private protected 访问规则</li>
+<li>静态数据成员可以直接使用类名加作用域运算符(::)直接访问 <strong>&lt;类名&gt;::&lt;变量名&gt;</strong>(访问规则允许的情况下)<h3 id="静态成员函数"><a href="#静态成员函数" class="headerlink" title="静态成员函数"></a>静态成员函数</h3></li>
+<li>在普通类成员函数前加上 static 关键字，即为静态成员函数</li>
+<li>在类外定义静态成员函数时，不用再加 static 关键字，只要在类中声明时加上即可</li>
+<li><strong>静态成员函数只能访问静态数据成员和静态成员函数，普通成员函数可以访问静态成员函数和静态数据成员</strong></li>
+<li>静态成员函数属于类，<strong>不属于任意一个类对象</strong></li>
+<li>静态成员函数<strong>没有 this 指针</strong></li>
+<li>可以使用 <strong>&lt;类名&gt;::&lt;函数名&gt;</strong> 访问，也可由**类对象使用(./-&gt;)**访问</li>
+</ul>
+<p>示例:</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">class A<span class="token punctuation">&#123;</span>
+    public<span class="token operator">:</span>
+        <span class="token keyword">static</span> <span class="token keyword">int</span> x<span class="token punctuation">;</span>    <span class="token comment">// 声明一个静态成员变量 </span>
+        <span class="token comment">// static int x = 10;    // error 声明一个静态成员变量 </span>
+        <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 声明一个静态成员函数</span>
         
+        <span class="token keyword">int</span> y1 <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> y2<span class="token punctuation">;</span>
+        
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token comment">// int A::x = 10; // 定义静态成员变量并初始化</span>
+<span class="token keyword">int</span> A<span class="token operator">::</span>x<span class="token punctuation">;</span> <span class="token comment">// 默认初始化为0，必须定义静态数据成员，不然会报错，在类内只能是声明</span>
+<span class="token keyword">void</span> A<span class="token operator">::</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    cout<span class="token operator">&lt;&lt;</span>x<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token comment">// cout&lt;&lt;y1&lt;&lt;endl;  error 不能访问非静态成员函数</span>
+    <span class="token comment">// cout&lt;&lt;y2&lt;&lt;endl;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    A a<span class="token punctuation">;</span>   <span class="token comment">// 创建一个 类 A 对象 </span>
+    A <span class="token operator">*</span>b <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>A<span class="token operator">::</span>x<span class="token operator">&lt;&lt;</span><span class="token char">'\t'</span><span class="token operator">&lt;&lt;</span>a<span class="token punctuation">.</span>x<span class="token operator">&lt;&lt;</span><span class="token char">'\t'</span><span class="token operator">&lt;&lt;</span>b<span class="token operator">-></span>x<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>  <span class="token comment">// 访问静态数据成员的方式 A::x  / a.x  / b->x</span>
+    A<span class="token operator">::</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 访问静态成员函数的方式 A::fun()  / a.fun()</span>
+    a<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    b<span class="token operator">-></span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// b->fun()</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
       
     </div>
 
@@ -507,7 +579,7 @@ chmod a<span class="token operator">+</span>x certbot<span class="token operator
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 13:14:23" itemprop="dateModified" datetime="2022-01-19T13:14:23+08:00">2022-01-19</time>
+                <time title="修改时间：2022-01-19 13:19:01" itemprop="dateModified" datetime="2022-01-19T13:19:01+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
