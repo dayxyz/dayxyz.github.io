@@ -150,6 +150,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sudo.plus/2020/11/02/Nginx%E9%85%8D%E7%BD%AEhttps%E5%8F%8C%E5%90%91%E8%AE%A4%E8%AF%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Silver">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silver实验室">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/02/Nginx%E9%85%8D%E7%BD%AEhttps%E5%8F%8C%E5%90%91%E8%AE%A4%E8%AF%81/" class="post-title-link" itemprop="url">Nginx配置https双向认证</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-02 08:13:00" itemprop="dateCreated datePublished" datetime="2020-11-02T08:13:00+08:00">2020-11-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-19 14:38:34" itemprop="dateModified" datetime="2022-01-19T14:38:34+08:00">2022-01-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="生成-CA-私钥和证书"><a href="#生成-CA-私钥和证书" class="headerlink" title="生成 CA 私钥和证书"></a>生成 CA 私钥和证书</h3><ol>
+<li>生成一个 CA 私钥: <pre class="line-numbers language-python" data-language="python"><code class="language-python">openssl genrsa <span class="token operator">-</span>out ca<span class="token punctuation">.</span>key <span class="token number">4096</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>生成一个 CA 的数字证书 <pre class="line-numbers language-c" data-language="c"><code class="language-c">openssl req <span class="token operator">-</span>new <span class="token operator">-</span>x509 <span class="token operator">-</span>days <span class="token number">3650</span> <span class="token operator">-</span>key ca<span class="token punctuation">.</span>key <span class="token operator">-</span>out ca<span class="token punctuation">.</span>crt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/11/02/Nginx%E9%85%8D%E7%BD%AEhttps%E5%8F%8C%E5%90%91%E8%AE%A4%E8%AF%81/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://sudo.plus/2020/10/11/%E4%BD%BF%E7%94%A8acme.sh%E7%94%B3%E8%AF%B7LetsEncrypt%E6%B3%9B%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6%E5%B9%B6%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -181,7 +264,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 14:35:40" itemprop="dateModified" datetime="2022-01-19T14:35:40+08:00">2022-01-19</time>
+                <time title="修改时间：2022-01-19 14:38:34" itemprop="dateModified" datetime="2022-01-19T14:38:34+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,7 +340,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 14:35:40" itemprop="dateModified" datetime="2022-01-19T14:35:40+08:00">2022-01-19</time>
+                <time title="修改时间：2022-01-19 14:38:34" itemprop="dateModified" datetime="2022-01-19T14:38:34+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -339,7 +422,7 @@ chmod a<span class="token operator">+</span>x certbot<span class="token operator
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 14:35:40" itemprop="dateModified" datetime="2022-01-19T14:35:40+08:00">2022-01-19</time>
+                <time title="修改时间：2022-01-19 14:38:34" itemprop="dateModified" datetime="2022-01-19T14:38:34+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -423,7 +506,7 @@ chmod a<span class="token operator">+</span>x certbot<span class="token operator
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 14:35:40" itemprop="dateModified" datetime="2022-01-19T14:35:40+08:00">2022-01-19</time>
+                <time title="修改时间：2022-01-19 14:38:34" itemprop="dateModified" datetime="2022-01-19T14:38:34+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -481,95 +564,10 @@ chmod a<span class="token operator">+</span>x certbot<span class="token operator
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sudo.plus/2019/09/11/C++%E4%B8%AD%E7%9A%84foreach%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Silver">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silver实验室">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/11/C++%E4%B8%AD%E7%9A%84foreach%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">C++中的foreach总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-12 02:51:00" itemprop="dateCreated datePublished" datetime="2019-09-12T02:51:00+08:00">2019-09-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-19 14:35:40" itemprop="dateModified" datetime="2022-01-19T14:35:40+08:00">2022-01-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>遍历是写代码时的常用操作，但使用标准for遍历有时是一件很麻烦的事。本文总结一下C++中的一些<strong>foreach</strong>用法，包括：</p>
-<ul>
-<li>C++11之后的<strong>Range-based for loop</strong></li>
-<li>STL中的<strong>std::for_each</strong></li>
-<li>Boost中的<strong>BOOST_FOREACH</strong>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/11/C++%E4%B8%AD%E7%9A%84foreach%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -635,7 +633,7 @@ chmod a<span class="token operator">+</span>x certbot<span class="token operator
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

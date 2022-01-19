@@ -22,26 +22,26 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="Silver实验室">
-<meta property="og:url" content="https://sudo.plus/tags/STL/index.html">
+<meta property="og:url" content="https://sudo.plus/page/3/index.html">
 <meta property="og:site_name" content="Silver实验室">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Silver">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://sudo.plus/tags/STL/">
+<link rel="canonical" href="https://sudo.plus/page/3/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
+    isHome : true,
     isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: STL | Silver实验室</title>
+  <title>Silver实验室</title>
   
 
 
@@ -144,92 +144,98 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sudo.plus/2019/08/07/Qt%E4%BF%A1%E5%8F%B7%E6%A7%BD%E4%B8%8D%E5%93%8D%E5%BA%94%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8E%9F%E5%9B%A0/">
 
-  
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">STL
-          <small>标签</small>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Silver">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silver实验室">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/07/Qt%E4%BF%A1%E5%8F%B7%E6%A7%BD%E4%B8%8D%E5%93%8D%E5%BA%94%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8E%9F%E5%9B%A0/" class="post-title-link" itemprop="url">Qt信号槽不响应的几种原因</a>
         </h2>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-08 07:33:00" itemprop="dateCreated datePublished" datetime="2019-08-08T07:33:00+08:00">2019-08-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-19 14:38:34" itemprop="dateModified" datetime="2022-01-19T14:38:34+08:00">2022-01-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
+          <h4 id="用Qt进行信号与信号槽连接后，会出现信号槽不响应信号的情况，原因可能是以下的情况："><a href="#用Qt进行信号与信号槽连接后，会出现信号槽不响应信号的情况，原因可能是以下的情况：" class="headerlink" title="用Qt进行信号与信号槽连接后，会出现信号槽不响应信号的情况，原因可能是以下的情况："></a>用Qt进行信号与信号槽连接后，会出现信号槽不响应信号的情况，原因可能是以下的情况：</h4><ol>
+<li><p>类没有声明**<code>Q_OBJECT</code>**;</p>
+</li>
+<li><p>槽函数没有定义为**<code>pubic/private slots</code>**;</p>
+</li>
+<li><p>信号和槽之间存在参数传递，但是二者的参数数量或者类型不一致（信号里的参数数量可以多于槽函数里的参数数量，但是二者都有的参数，类型必须对应）</p>
+</li>
+<li><p>事件被子控件过滤掉了。比如**<code>QListWidget</code><strong>,当</strong>QListWidgetItem<strong>已经处理</strong>keypress<strong>事件后，</strong>QListWidget<strong>就不能响应</strong>itemDoubleClicked**事件了</p>
+</li>
+<li><p>信号槽的参数是自定义的，这时需要用**<code>qRegisterMetaType</code>**注册一下这种类型</p>
+</li>
+</ol>
+
+      
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-12T02:51:00+08:00"
-              content="2019-09-12">
-          09-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/09/11/C++%E4%B8%AD%E7%9A%84foreach%E6%80%BB%E7%BB%93/" itemprop="url">
-            <span itemprop="name">C++中的foreach总结</span>
-          </a>
-      </div>
-
-    </header>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-05T05:09:00+08:00"
-              content="2019-09-05">
-          09-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/09/04/STL%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/" itemprop="url">
-            <span itemprop="name">STL常用算法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-05T03:05:00+08:00"
-              content="2019-09-05">
-          09-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/09/04/STL%20%20accumulate%E7%94%A8%E6%B3%95/" itemprop="url">
-            <span itemprop="name">STL  accumulate用法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-    </div>
-  </div>
   
   
   
 
+
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
 
 
 
